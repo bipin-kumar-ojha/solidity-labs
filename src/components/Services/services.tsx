@@ -4,7 +4,7 @@ import './services.scss';
 const services = [
   {
     icon: (
-      <img src="src/assets/services/web-development.svg" alt="" />
+      <img src="assets/services/web-development.svg" alt="" />
     ),
     title: 'Web Development',
     desc: 'Modern and scalable web applications built with React, Angular, Node.js, and modern frontend technologies.',
@@ -12,7 +12,7 @@ const services = [
   },
   {
     icon: (
-      <img src="src/assets/services/blockchain.svg" alt="" />
+      <img src="assets/services/blockchain.svg" alt="" />
     ),
     title: 'Blockchain & Crypto Development',
     desc: 'Secure blockchain applications, smart contracts, and crypto platforms built for Web3 businesses.',
@@ -20,7 +20,7 @@ const services = [
   },
   {
     icon: (
-      <img src="src/assets/services/app-development.svg" alt="" />
+      <img src="assets/services/app-development.svg" alt="" />
     ),
     title: 'Mobile App Development',
     desc: 'High-performance mobile applications for iOS and Android built with modern frameworks.',
@@ -28,7 +28,7 @@ const services = [
   },
   {
     icon: (
-      <img src="src/assets/services/graphics-design.svg" alt="" />
+      <img src="assets/services/graphics-design.svg" alt="" />
     ),
     title: 'UI/UX & Graphic Design',
     desc: 'Creative user interfaces, branding, and graphic design that enhance user experience and engagement.',
@@ -36,7 +36,7 @@ const services = [
   },
   {
     icon: (
-      <img src="src/assets/services/wordpress.svg" alt="" />
+      <img src="assets/services/wordpress.svg" alt="" />
     ),
     title: 'WordPress & E-Commerce',
     desc: 'Custom WordPress websites and scalable e-commerce platforms for online businesses.',
@@ -44,7 +44,7 @@ const services = [
   },
   {
     icon: (
-      <img src="src/assets/services/crm.svg" alt="" />
+      <img src="assets/services/crm.svg" alt="" />
     ),
     title: 'CRM & Custom Software',
     desc: 'Tailored CRM systems and custom business software designed to streamline operations and growth.',

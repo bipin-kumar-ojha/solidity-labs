@@ -4,7 +4,7 @@ import './Process.scss';
 const steps = [
 	{
 		icon: (
-			<img src="src/assets/process/project-descovery.svg" alt="" />
+			<img src="assets/process/project-descovery.svg" alt="" />
 		),
 		title: 'Project Discovery',
 		desc: 'We understand your business goals, target users, and technical requirements before starting development.',
@@ -12,7 +12,7 @@ const steps = [
 	},
 	{
 		icon: (
-			<img src="src/assets/process/planning.svg" alt="" />
+			<img src="assets/process/planning.svg" alt="" />
 		),
 		title: 'Planning & Strategy',
 		desc: 'Our team defines the technology stack, project roadmap, and development milestones.',
@@ -20,7 +20,7 @@ const steps = [
 	},
 	{
 		icon: (
-			<img src="src/assets/process/design-development.svg" alt="" />
+			<img src="assets/process/design-development.svg" alt="" />
 		),
 		title: 'Design & Development',
 		desc: 'We design intuitive UI/UX and develop scalable web, mobile, or blockchain applications.',
@@ -28,7 +28,7 @@ const steps = [
 	},
 	{
 		icon: (
-			<img src="src/assets/process/testing.svg" alt="" />
+			<img src="assets/process/testing.svg" alt="" />
 		),
 		title: 'Testing & Quality Assurance',
 		desc: 'Comprehensive testing ensures performance, security, and reliability before launch.',
@@ -36,7 +36,7 @@ const steps = [
 	},
 	{
 		icon: (
-			<img src="src/assets/process/deployment.svg" alt="" />
+			<img src="assets/process/deployment.svg" alt="" />
 		),
 		title: 'Deployment',
 		desc: 'We launch your product with optimized infrastructure, security, and performance monitoring.',
@@ -44,7 +44,7 @@ const steps = [
 	},
 	{
 		icon: (
-			<img src="src/assets/process/maintenance.png" alt="" />
+			<img src="assets/process/maintenance.png" alt="" />
 		),
 		title: 'Maintenance & Support',
 		desc: 'Continuous updates, monitoring, and technical support to keep your product running smoothly.',

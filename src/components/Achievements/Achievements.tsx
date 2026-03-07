@@ -4,7 +4,7 @@ import './Achievements.scss';
 const achievements = [
 	{
 		icon: (
-			<img src="/src/assets/software-dev.svg" alt="" />
+			<img src="assets/software-dev.svg" alt="" />
 		),
 		value: '10+',
 		label: 'Years in Software Development',
@@ -12,7 +12,7 @@ const achievements = [
 	},
 	{
 		icon: (
-			<img src="/src/assets/web-app-projects.svg" alt="" />
+			<img src="assets/web-app-projects.svg" alt="" />
 		),
 		value: '300+',
 		label: 'Web & App Projects Delivered',
@@ -20,7 +20,7 @@ const achievements = [
 	},
 	{
 		icon: (
-			<img src="/src/assets/global-businesses.svg" alt="" />
+			<img src="assets/global-businesses.svg" alt="" />
 		),
 		value: '150+',
 		label: 'Global Businesses Served',
@@ -28,7 +28,7 @@ const achievements = [
 	},
 	{
 		icon: (
-			<img src="/src/assets/expert-developers.svg" alt="" />
+			<img src="assets/expert-developers.svg" alt="" />
 		),
 		value: '40+',
 		label: 'Expert Developers & Designers',

@@ -15,7 +15,7 @@ const heroData = {
     secondary: "Our Services"
   },
   trusted: ["Startups", "Enterprises", "Global Clients"],
-  image: "/src/assets/hero-banner.jpeg"
+  image: "assets/hero-banner.jpeg"
 };
 
 export default function HeroSection() {

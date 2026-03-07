@@ -3,7 +3,7 @@ import './Featurex.scss';
 
 const features = [
 	{
-		image: 'src/assets/works/crypto.jpg',
+		image: 'assets/works/crypto.jpg',
 		badge: { text: 'Blockchain Development', colorClass: 'featurex__badge--blue' },
 		title: 'Crypto Trading Platform',
 		desc: 'Developed a secure blockchain-based trading platform with smart contracts, wallet integration, and real-time transactions.',
@@ -11,7 +11,7 @@ const features = [
 		link: '#',
 	},
 	{
-		image: 'src/assets/works/web.jpg',
+		image: 'assets/works/web.jpg',
 		badge: { text: 'Web Development', colorClass: 'featurex__badge--purple' },
 		title: 'Scalable E-Commerce Platform',
 		desc: 'Built a high-performance e-commerce website using modern web technologies with payment integration and optimized user experience.',
@@ -19,7 +19,7 @@ const features = [
 		link: '#',
 	},
 	{
-		image: 'src/assets/works/mobile-app.jpg',
+		image: 'assets/works/mobile-app.jpg',
 		badge: { text: 'Mobile App Development', colorClass: 'featurex__badge--green' },
 		title: 'On-Demand Service Mobile App',
 		desc: 'Created a cross-platform mobile application with real-time booking, payment gateway, and user-friendly interface.',
