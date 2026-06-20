@@ -1,69 +1,91 @@
-import React from 'react';
-import './Header.scss';
+'use client';
 
-const navLinks = [
-  'Services',
-  'Case Studies',
-  'Industries',
-  'Process',
-  'About',
-  'Blog',
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import HeaderLogo from './HeaderLogo';
+import NavDesktop from './NavDesktop';
+import CTAButtons from './CTAButtons';
+
+const mobileNavItems = [
+  { label: 'Services', href: '/services/' },
+  { label: 'Solutions', href: '/solutions/' },
+  { label: 'Industries', href: '/industries/' },
+  { label: 'Technologies', href: '/technologies/' },
+  { label: 'Portfolio', href: '/portfolio/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'About', href: '/about/' },
 ];
 
-const Header: React.FC = () => {
-  const [menuOpen, setMenuOpen] = React.useState(false);
-  const handleMenuToggle = () => setMenuOpen((open) => !open);
-  const handleMenuClose = () => setMenuOpen(false);
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="header">
-      <div className="header__container">
-        <a href="/" className="header__logo">
-          <span className="header__logo-icon">SL</span>
-          <span className="header__logo-text">Solidity Labs</span>
-        </a>
-        {/* Desktop navigation and actions, visible only above 1200px */}
-        <nav className="header__nav">
-          <ul className="header__nav-list">
-            {navLinks.map((label) => (
-              <li key={label} className="header__nav-item">
-                <a href={`/${label.replace(/\s+/g, '-').toLowerCase()}`}>{label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="header__actions">
-          <button className="header__button header__button--primary">Get Started</button>
-        </div>
-        {/* Mobile menu button, visible only below 1200px */}
-        <button className="header__mobile-menu-btn" onClick={handleMenuToggle} aria-label="Open menu">
-          <span className="header__mobile-menu-icon">☰</span>
+    <header
+      className={`fixed left-0 right-0 top-0 z-[1000] border-b transition-all duration-200 ${
+        isScrolled
+          ? 'border-slate-200 bg-white/95 shadow-sm backdrop-blur-md'
+          : 'border-slate-200/80 bg-white/95 backdrop-blur'
+      }`}
+    >
+      <div className="mx-auto flex h-16 max-w-7xl items-center px-6">
+        <HeaderLogo />
+        <NavDesktop />
+        <CTAButtons />
+
+        <button
+          type="button"
+          aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
+          onClick={() => setIsMobileOpen((value) => !value)}
+          className="ml-auto flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 text-slate-800 transition-colors hover:border-cyan-500 hover:text-cyan-700 md:hidden"
+        >
+          {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay and Menu, only rendered below 1200px via CSS */}
-      <div className={`header__mobile-menu-overlay ${menuOpen ? 'open' : ''}`} onClick={handleMenuClose}></div>
-      <nav className={`header__mobile-menu ${menuOpen ? 'open' : ''}`}>
-        <div className="header__mobile-menu-header">
-          <a href="/" className="header__logo" onClick={handleMenuClose}>
-            <span className="header__logo-icon">SL</span>
-            <span className="header__logo-text">Solidity Labs</span>
-          </a>
-          <button className="header__mobile-menu-close" onClick={handleMenuClose} aria-label="Close menu">×</button>
+      {isMobileOpen && (
+        <div className="border-t border-slate-200 bg-white px-6 pb-6 pt-3 shadow-lg md:hidden">
+          <nav className="mx-auto grid max-w-7xl gap-1">
+            {mobileNavItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsMobileOpen(false)}
+                className="rounded-md px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-cyan-50 hover:text-cyan-700"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="mx-auto mt-4 grid max-w-7xl gap-3 sm:grid-cols-2">
+            <Link
+              href="/contact/book-consultation/"
+              onClick={() => setIsMobileOpen(false)}
+              className="rounded-md border border-slate-300 px-4 py-3 text-center text-sm font-semibold text-slate-700"
+            >
+              Book Consultation
+            </Link>
+            <Link
+              href="/contact/get-a-quote/"
+              onClick={() => setIsMobileOpen(false)}
+              className="rounded-md bg-cyan-500 px-4 py-3 text-center text-sm font-bold text-slate-950"
+            >
+              Get a Quote
+            </Link>
+          </div>
         </div>
-        <ul className="header__mobile-menu-list">
-          {navLinks.map((label) => (
-            <li key={label} className="header__mobile-menu-item">
-              <a href={`/${label.replace(/\s+/g, '-').toLowerCase()}`} onClick={handleMenuClose}>{label}</a>
-            </li>
-          ))}
-        </ul>
-        <div className="header__mobile-menu-actions">
-          <button className="header__button header__button--primary" onClick={handleMenuClose}>Get Started</button>
-        </div>
-      </nav>
+      )}
     </header>
   );
-};
-
-export default Header;
+}
